@@ -1,4 +1,4 @@
-// Package shrex provides functionality that powers the share exchange protocols used by celestia-node.
+// Package shrex provides functionality that powers the share exchange protocols used by chaincraft.
 // The available protocols are:
 //
 //   - shrexsub : a floodsub-based pubsub protocol that is used to broadcast/subscribe to the event

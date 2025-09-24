@@ -57,7 +57,7 @@ func computeEmpty() {
 	}
 	minDAH := da.MinDataAvailabilityHeader()
 	if !bytes.Equal(minDAH.Hash(), emptyBlockRoots.Hash()) {
-		panic(fmt.Sprintf("mismatch in calculated minimum DAH and minimum DAH from celestia-app, "+
+		panic(fmt.Sprintf("mismatch in calculated minimum DAH and minimum DAH from chaincraft-app, "+
 			"expected %s, got %s", minDAH.String(), emptyBlockRoots.String()))
 	}
 

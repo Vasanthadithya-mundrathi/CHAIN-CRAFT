@@ -8,7 +8,7 @@ import (
 	"github.com/celestiaorg/nmt/pb"
 )
 
-// Reported at https://github.com/celestiaorg/celestia-node/issues/3731.
+// Reported in project issue tracker.
 func TestCommitmentProofRowProofVerifyWithEmptyRoot(t *testing.T) {
 	cp := &CommitmentProof{
 		RowProof: proof.RowProof{
@@ -21,7 +21,7 @@ func TestCommitmentProofRowProofVerifyWithEmptyRoot(t *testing.T) {
 	}
 }
 
-// Reported at https://github.com/celestiaorg/celestia-node/issues/3730.
+// Reported in project issue tracker.
 func TestCommitmentProofRowProofVerify(t *testing.T) {
 	cp := &CommitmentProof{
 		RowProof: proof.RowProof{
@@ -33,7 +33,7 @@ func TestCommitmentProofRowProofVerify(t *testing.T) {
 	}
 }
 
-// Reported at https://github.com/celestiaorg/celestia-node/issues/3729.
+// Reported in project issue tracker.
 func TestCommitmentProofVerifySliceBound(t *testing.T) {
 	proof := nmt.ProtoToProof(pb.Proof{End: 1})
 	cp := &CommitmentProof{
@@ -46,7 +46,7 @@ func TestCommitmentProofVerifySliceBound(t *testing.T) {
 	}
 }
 
-// Reported at https://github.com/celestiaorg/celestia-node/issues/3728.
+// Reported in project issue tracker.
 func TestCommitmentProofVerifyZeroSubThreshold(t *testing.T) {
 	cp := new(CommitmentProof)
 	if _, err := cp.Verify(nil, 0); err == nil {
@@ -54,7 +54,7 @@ func TestCommitmentProofVerifyZeroSubThreshold(t *testing.T) {
 	}
 }
 
-// Reported at https://github.com/celestiaorg/celestia-node/issues/3727.
+// Reported in project issue tracker.
 func TestBlobUnmarshalRepro(t *testing.T) {
 	blob := new(Blob)
 	if err := blob.UnmarshalJSON([]byte("{}")); err == nil {

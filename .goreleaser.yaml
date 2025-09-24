@@ -1,19 +1,19 @@
 version: 2
-# This is an example .goreleaser.yml file with some sensible defaults.
+# This is a local development .goreleaser.yml file for building ChainCraft binaries.
 # Make sure to check the documentation at https://goreleaser.com
 before:
   hooks:
     - go mod tidy
 builds:
   - main: ./cmd/celestia
-    binary: celestia
+    binary: chaincraft
     env:
       # NOTE: goreleaser doesn't fully support CGO natively. If CGO is needed
       # for any node features, this should be removed and a workaround might
       # need to be created.
       # REF: https://goreleaser.com/limitations/cgo/
       - CGO_ENABLED=0
-      - VersioningPath={{ "github.com/celestiaorg/celestia-node/nodebuilder/node" }}
+      - VersioningPath={{ "github.com/cbitcollege/chaincraft/nodebuilder/node" }}
     goos:
       - linux
       - darwin
@@ -46,18 +46,6 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
 checksum:
   name_template: "checksums.txt"
-signs:
-  - artifacts: checksum
-    args:
-      [
-        "--batch",
-        "-u",
-        "{{ .Env.GPG_FINGERPRINT }}",
-        "--output",
-        "${signature}",
-        "--detach-sign",
-        "${artifact}",
-      ]
 snapshot:
   version_template: "{{ incpatch .Version }}-next"
 changelog:
@@ -66,9 +54,3 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-release:
-  prerelease: auto
-  mode: keep-existing
-git:
-  prerelease_suffix: "-rc*"
-  tag_sort: -version:creatordate

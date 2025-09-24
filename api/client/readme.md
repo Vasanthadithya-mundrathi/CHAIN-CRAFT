@@ -19,7 +19,7 @@ This client package provides a simplified interface for interacting with Celesti
 ## Installation
 
 ```bash
-go get github.com/celestiaorg/celestia-node/api/client
+go get <package-name>/api/client
 ```
 
 ## Usage
@@ -125,4 +125,4 @@ balance, err := celestiaClient.State.Balance(ctx)
 
 ## Example
 
-See [example.go](https://github.com/celestiaorg/celestia-node/blob/light-lib/api/client/example/example.go) for a complete example of creating a client, submitting a blob, and retrieving it.
+See example.go for a complete example of creating a client, submitting a blob, and retrieving it.

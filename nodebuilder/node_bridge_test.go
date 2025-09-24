@@ -16,7 +16,7 @@ import (
 )
 
 func TestBridge_WithMockedCoreClient(t *testing.T) {
-	t.Skip("skipping") // consult https://github.com/celestiaorg/celestia-core/issues/667 for reasoning
+	t.Skip("skipping") // consult https://github.com/celestiaorg/celestia-node-core/issues/667 for reasoning
 	repo := MockStore(t, DefaultConfig(node.Bridge))
 
 	ctx, cancel := context.WithCancel(context.Background())

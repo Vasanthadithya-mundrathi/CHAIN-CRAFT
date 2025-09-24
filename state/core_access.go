@@ -44,7 +44,7 @@ var (
 )
 
 // CoreAccessor implements service over a gRPC connection
-// with a celestia-core node.
+// with a chaincraft-core node.
 type CoreAccessor struct {
 	ctx    context.Context
 	cancel context.CancelFunc
@@ -77,7 +77,7 @@ type CoreAccessor struct {
 	payForBlobCount int64
 }
 
-// NewCoreAccessor dials the given celestia-core endpoint and
+// NewCoreAccessor dials the given chaincraft-core endpoint and
 // constructs and returns a new CoreAccessor (state service) with the active
 // connection.
 func NewCoreAccessor(

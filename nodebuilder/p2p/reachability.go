@@ -34,7 +34,7 @@ func reachabilityCheck(ctx context.Context, host HostBase) {
 				}
 
 				log.Error(`Host is not reachable from the public network!
-See https://docs.celestia.org/how-to-guides/celestia-node-troubleshooting#ports
+See https://docs.celestia.org/how-to-guides/chaincraft-troubleshooting#ports
 `)
 			case <-ctx.Done():
 				return

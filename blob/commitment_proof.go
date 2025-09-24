@@ -111,8 +111,7 @@ func (commitmentProof *CommitmentProof) Verify(root []byte, subtreeRootThreshold
 	// use the computed total number of shares to calculate the subtree roots
 	// width.
 	// the subtree roots width is defined in ADR-013:
-	//
-	//https://github.com/celestiaorg/celestia-app/blob/main/docs/architecture/adr-013-non-interactive-default-rules-for-zero-padding.md
+	// Reference: ADR-013 non-interactive default rules for zero-padding
 	subtreeRootsWidth := inclusion.SubTreeWidth(numberOfShares, subtreeRootThreshold)
 
 	// verify the proof of the subtree roots

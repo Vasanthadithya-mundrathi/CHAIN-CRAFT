@@ -87,7 +87,7 @@ func TestInit_generateNewKey(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, originalKey, keys[0])
 
-	// ensure the generated account is actually a celestia account
+	// ensure the generated account is actually a chaincraft account
 	addr, err := originalKey.GetAddress()
 	require.NoError(t, err)
 	assert.Contains(t, addr.String(), "celestia")

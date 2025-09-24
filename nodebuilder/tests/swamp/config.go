@@ -8,7 +8,7 @@ import (
 	"github.com/celestiaorg/celestia-node/core"
 )
 
-// DefaultConfig creates a celestia-app instance with a block time of around
+// DefaultConfig creates a chaincraft-app instance with a block time of around
 // 100ms
 func DefaultConfig() *testnode.Config {
 	cfg := core.DefaultTestConfig()

@@ -269,7 +269,7 @@ func dataPath(base string) string {
 //
 // With the following configuration and "-tags=jemalloc", a LN uses no more than 180MiB during initial
 // sync/sampling and up to 100MiB during normal operation. (same hardware spec)
-// NOTE: To enable jemalloc, build celestia-node with "-tags=jemalloc" flag, which configures Badger to
+// NOTE: To enable jemalloc, build chaincraft with "-tags=jemalloc" flag, which configures Badger to
 // use jemalloc instead of Go's default allocator.
 //
 // TODO(@Wondertan): Consider alternative less constraint configuration for FN/BN

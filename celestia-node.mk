@@ -1,17 +1,17 @@
-# Celestia Node Management Rules
+# ChainCraft Node Management Rules
 # These rules can be included in the main Makefile
 
 .PHONY: install get-address check-and-fund reset-node light-up node-help
 
 node-help:
-	@echo "Celestia Light Node Management Commands:"
+	@echo "ChainCraft Light Node Management Commands:"
 	@echo ""
 	@echo "Available targets:"
-	@echo "  node-install        - Install celestia node and cel-key binaries"
+	@echo "  node-install        - Install chaincraft node and cel-key binaries"
 	@echo "  get-address        - Display the wallet address from cel-key"
 	@echo "  check-and-fund     - Check wallet balance and request funds if needed"
 	@echo "  reset-node         - Reset node state and update config with latest block height"
-	@echo "  light-arabica-up   - Start the Celestia light node"
+	@echo "  light-arabica-up   - Start the ChainCraft light node"
 	@echo ""
 	@echo "Special usage:"
 	@echo "  light-arabica-up options:"
@@ -59,44 +59,44 @@ check-and-fund:
 # Reset node state and update config
 reset-node:
 	@echo "Resetting node state..."
-	@celestia light unsafe-reset-store --p2p.network arabica
+	@chaincraft light unsafe-reset-store --p2p.network arabica
 	@echo "Getting latest block height and hash..."
 	@block_response=$$(curl -s https://rpc.celestia-arabica-11.com/block); \
 	latest_block=$$(echo $$block_response | jq -r '.result.block.header.height'); \
 	latest_hash=$$(echo $$block_response | jq -r '.result.block_id.hash'); \
 	echo "Latest block height: $$latest_block"; \
 	echo "Latest block hash: $$latest_hash"; \
-	config_file="$$HOME/.celestia-light-arabica-11/config.toml"; \
+	config_file="$$HOME/.chaincraft-light-arabica-11/config.toml"; \
 	echo "Updating config.toml..."; \
 	sed -i.bak -e "s/\(TrustedHash[[:space:]]*=[[:space:]]*\).*/\1\"$$latest_hash\"/" \
 		   -e "s/\(SampleFrom[[:space:]]*=[[:space:]]*\).*/\1$$latest_block/" \
 		   "$$config_file"; \
 	echo "Configuration updated successfully"
 
-# Start the Celestia light node
+# Start the ChainCraft light node
 # Usage: make light-arabica-up [COMMAND=again] [CORE_IP=custom_ip]
 light-arabica-up:
-	@config_file="$$HOME/.celestia-light-arabica-11/config.toml"; \
+	@config_file="$$HOME/.chaincraft-light-arabica-11/config.toml"; \
 	if [ "$(COMMAND)" = "again" ]; then \
 		$(MAKE) reset-node; \
 	fi; \
 	if [ -e "$$config_file" ]; then \
 		echo "Using config file: $$config_file"; \
 	else \
-		celestia light init --p2p.network arabica; \
+		chaincraft light init --p2p.network arabica; \
 		$(MAKE) reset-node; \
 		$(MAKE) check-and-fund; \
 	fi; \
 	$(MAKE) check-and-fund; \
 	if [ -n "$(CORE_IP)" ]; then \
-		celestia light start \
+		chaincraft light start \
 			--core.ip $(CORE_IP) \
 			--core.port $(if $(CORE_PORT),$(CORE_PORT),9090) \
 			--rpc.skip-auth \
 			--rpc.addr 0.0.0.0 \
 			--p2p.network arabica; \
 	else \
-		celestia light start \
+		chaincraft light start \
 			--core.ip validator-1.celestia-arabica-11.com \
 			--core.port $(if $(CORE_PORT),$(CORE_PORT),9090) \
 			--rpc.skip-auth \

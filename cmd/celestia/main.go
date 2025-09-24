@@ -1,3 +1,5 @@
+// Author: Vasanthadithya Mundrathi from CBIT college
+// ChainCraft - A blockchain node implementation for data availability sampling
 package main
 
 import (
@@ -49,16 +51,35 @@ func run() error {
 }
 
 var rootCmd = &cobra.Command{
-	Use: "celestia [  bridge  ||  full ||  light  ] [subcommand]",
+	Use: "chaincraft [  bridge  ||  full ||  light  ] [subcommand]",
 	Short: `
-	    ____      __          __  _
-	  / ____/__  / /__  _____/ /_(_)___ _
-	 / /   / _ \/ / _ \/ ___/ __/ / __  /
-	/ /___/  __/ /  __(__  ) /_/ / /_/ /
-	\____/\___/_/\___/____/\__/_/\__,_/
+	 ██████   ██████ 
+	██      ██
+	██      ██
+	██      ██
+	 ██████   ██████
+
+	 
+
+	ChainCraft - Blockchain Infrastructure & Data Availability
 	`,
 	Args: cobra.NoArgs,
 	CompletionOptions: cobra.CompletionOptions{
 		DisableDefaultCmd: false,
 	},
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {
+		author, _ := cmd.Flags().GetBool("author")
+		if author {
+			cmd.Printf("ChainCraft v1.0.0\n")
+			cmd.Printf("Author: Vasanthadithya Mundrathi\n")
+			cmd.Printf("Institution: CBIT college\n")
+			cmd.Printf("Description: Blockchain node implementation for data availability sampling\n")
+			cmd.Printf("Contact: vasanthadithya@example.com\n")
+			os.Exit(0)
+		}
+	},
+}
+
+func init() {
+	rootCmd.PersistentFlags().BoolP("author", "a", false, "Display author information")
 }

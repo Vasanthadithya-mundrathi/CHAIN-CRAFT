@@ -136,7 +136,7 @@ func (s *Swamp) WaitTillHeight(ctx context.Context, height int64) libhead.Hash {
 	}
 }
 
-// createPeer is a helper for celestia nodes to initialize
+// createPeer is a helper for chaincraft nodes to initialize
 // with a real key instead of using a bogus one.
 func (s *Swamp) createPeer(ks keystore.Keystore) host.Host {
 	key, err := p2p.Key(ks)

@@ -25,7 +25,7 @@ func NodeFlags() *flag.FlagSet {
 	flags.String(
 		nodeStoreFlag,
 		"",
-		"The path to root/home directory of your Celestia Node Store",
+		"The path to root/home directory of your ChainCraft Node Store",
 	)
 	flags.String(
 		nodeConfigFlag,

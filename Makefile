@@ -1,3 +1,6 @@
+# Author: Vasanthadithya Mundrathi from CBIT college
+# ChainCraft Build System - Makefile for building and managing ChainCraft nodes
+SHELL=/usr/bin/env bash
 SHELL=/usr/bin/env bash
 PROJECTNAME=$(shell basename "$(PWD)")
 DIR_FULLPATH=$(shell pwd)
@@ -46,19 +49,19 @@ install-hooks:
 	@git config core.hooksPath .githooks
 .PHONY: install-hooks
 
-## build: Build celestia-node binary.
+## build: Build chaincraft-node binary.
 build:
-	@echo "--> Building Celestia"
-	@go build -o build/ ${LDFLAGS} ./cmd/celestia
+	@echo "--> Building ChainCraft"
+	@go build -o build/chaincraft ${LDFLAGS} ./cmd/celestia
 .PHONY: build
 
-## build-jemalloc: Build celestia-node binary with jemalloc allocator for BadgerDB.
+## build-jemalloc: Build chaincraft-node binary with jemalloc allocator for BadgerDB.
 build-jemalloc: jemalloc
-	@echo "--> Building Celestia with jemalloc"
+	@echo "--> Building ChainCraft with jemalloc"
 	@go build -o build/ ${LDFLAGS} -tags jemalloc ./cmd/celestia
 .PHONY: build-jemalloc
 
-## clean: Clean up celestia-node binary.
+## clean: Clean up chaincraft-node binary.
 clean:
 	@echo "--> Cleaning up ./build"
 	@rm -rf build/*
@@ -77,24 +80,24 @@ deps:
 	@go mod download
 .PHONY: deps
 
-## install: Install the celestia-node binary.
+## install: Install the chaincraft-node binary.
 install:
-ifeq ($(OS),Darwin)
-	@$(MAKE) go-install
-else
-	@$(MAKE) install-global
-endif
+	ifeq ($(OS),Darwin)
+		@$(MAKE) go-install
+	else
+		@$(MAKE) install-global
+	endif
 .PHONY: install
 
-## install-global: Install the celestia-node binary (only for systems that support GNU coreutils like Linux).
+## install-global: Install the chaincraft-node binary (only for systems that support GNU coreutils like Linux).
 install-global:
-	@echo "--> Installing Celestia"
+	@echo "--> Installing ChainCraft"
 	@install -v ./build/* -t ${PREFIX}/bin
 .PHONY: install-global
 
-## go-install: Build and install the celestia-node binary into the GOBIN directory.
+## go-install: Build and install the chaincraft-node binary into the GOBIN directory.
 go-install:
-	@echo "--> Installing Celestia"
+	@echo "--> Installing ChainCraft"
 	@go install ${LDFLAGS} ./cmd/celestia
 .PHONY: go-install
 
@@ -199,7 +202,7 @@ pb-gen:
 	done;
 .PHONY: pb-gen
 
-## openrpc-gen: Generate OpenRPC spec for celestia-node's RPC API.
+## openrpc-gen: Generate OpenRPC spec for chaincraft-node's RPC API.
 openrpc-gen:
 	@go run ${LDFLAGS} ./cmd/celestia docgen
 .PHONY: openrpc-gen
@@ -222,8 +225,8 @@ sort-imports:
 ## adr-gen: Generate ADR from template. Must set NUM and TITLE parameters.
 adr-gen:
 	@echo "--> Generating ADR"
-	@curl -sSL https://raw.githubusercontent.com/celestiaorg/.github/main/adr-template.md > docs/architecture/adr-$(NUM)-$(TITLE).md
-.PHONY: adr-gen
+	@echo "Note: ADR template generation requires manual setup for local usage"
+	.PHONY: adr-gen
 
 ## telemetry-infra-up: Launch local telemetry infra (grafana, jaeger, loki, pyroscope, and otel-collector).
 # You can access the grafana instance at localhost:3000 and login with admin:admin.
@@ -243,12 +246,12 @@ goreleaser: Makefile
 	@goreleaser --version
 .PHONY: goreleaser
 
-## goreleaser-build: Builds the celestia binary using GoReleaser for your local OS.
+## goreleaser-build: Builds the chaincraft binary using GoReleaser for your local OS.
 goreleaser-build:
 	goreleaser build --snapshot --clean --single-target
 .PHONY: goreleaser-build
 
-## goreleaser-release: Builds the release celestia binaries as defined in .goreleaser.yaml.
+## goreleaser-release: Builds the release chaincraft binaries as defined in .goreleaser.yaml.
 # This requires there be a git tag for the release in the local git history.
 goreleaser-release:
 	goreleaser release --clean --fail-fast --skip-publish

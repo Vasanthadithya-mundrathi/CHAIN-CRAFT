@@ -12,7 +12,7 @@ import (
 // Balance is an alias to the Coin type from Cosmos-SDK.
 type Balance = sdk.Coin
 
-// Tx is an alias to the Tx type from celestia-core.
+// Tx is an alias to the Tx type from chaincraft-core.
 type Tx = coretypes.Tx
 
 // TxResponse is an alias to the TxResponse type from Cosmos-SDK.

@@ -24,8 +24,7 @@ import (
 var log = logging.Logger("ipld")
 
 const (
-	// Below used multiformats (one codec, one multihash) seem free:
-	// https://github.com/multiformats/multicodec/blob/master/table.csv
+	// Below used multiformats (one codec, one multihash) seem free
 
 	// nmtCodec is the codec used for leaf and inner nodes of a Namespaced Merkle Tree.
 	nmtCodec = 0x7700

@@ -1,3 +1,5 @@
+// Author: Vasanthadithya Mundrathi from CBIT college
+// ChainCraft Node Commands - Bridge, Light, and Full node management
 package cmd
 
 import (
@@ -26,7 +28,7 @@ func NewBridge(options ...func(*cobra.Command, []*pflag.FlagSet)) *cobra.Command
 	cmd := &cobra.Command{
 		Use:   "bridge [subcommand]",
 		Args:  cobra.NoArgs,
-		Short: "Manage your Bridge node",
+		Short: "Manage your ChainCraft Bridge node",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			ctx := WithNodeType(cmd.Context(), node.Bridge)
 			cmd.SetContext(ctx)
@@ -54,7 +56,7 @@ func NewLight(options ...func(*cobra.Command, []*pflag.FlagSet)) *cobra.Command 
 	cmd := &cobra.Command{
 		Use:   "light [subcommand]",
 		Args:  cobra.NoArgs,
-		Short: "Manage your Light node",
+		Short: "Manage your ChainCraft Light node",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			ctx := WithNodeType(cmd.Context(), node.Light)
 			cmd.SetContext(ctx)
@@ -81,7 +83,7 @@ func NewFull(options ...func(*cobra.Command, []*pflag.FlagSet)) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "full [subcommand]",
 		Args:  cobra.NoArgs,
-		Short: "Manage your Full node",
+		Short: "Manage your ChainCraft Full node",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			log.Error(
 				"DEPRECATION NOTICE: FULL NODE MODE WILL BE DEPRECATED SOON." +

@@ -13,7 +13,7 @@ import (
 
 const (
 	// DefaultGasPrice specifies the default gas price value to be used when the user
-	// wants to use the global minimal gas price, which is fetched from the celestia-app.
+	// wants to use the global minimal gas price, which is fetched from the chaincraft-app.
 	DefaultGasPrice float64 = -1.0
 
 	DefaultMaxGasPrice = appconsts.DefaultMinGasPrice * 100
@@ -168,7 +168,7 @@ type ConfigOption func(cfg *TxConfig)
 
 // WithGasPrice is an option that allows to specify a GasPrice, which is needed
 // to calculate the fee. In case GasPrice is not specified, the global GasPrice fetched from
-// celestia-app will be used.
+// chaincraft-app will be used.
 func WithGasPrice(gasPrice float64) ConfigOption {
 	return func(cfg *TxConfig) {
 		if gasPrice >= 0 {

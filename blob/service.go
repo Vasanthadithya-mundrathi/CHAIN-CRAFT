@@ -42,7 +42,7 @@ var (
 // to specify options for SubmitPFB transaction.
 type SubmitOptions = state.TxConfig
 
-// Submitter is an interface that allows submitting blobs to the celestia-core. It is used to
+// Submitter is an interface that allows submitting blobs to the chaincraft-core. It is used to
 // avoid a circular dependency between the blob and the state package, since the state package needs
 // the blob.Blob type for this signature.
 type Submitter interface {
@@ -53,7 +53,7 @@ type Service struct {
 	// ctx represents the Service's lifecycle context.
 	ctx    context.Context
 	cancel context.CancelFunc
-	// accessor dials the given celestia-core endpoint to submit blobs.
+	// accessor dials the given chaincraft-core endpoint to submit blobs.
 	blobSubmitter Submitter
 	// shareGetter retrieves the EDS to fetch all shares from the requested header.
 	shareGetter shwap.Getter

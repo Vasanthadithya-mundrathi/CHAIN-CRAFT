@@ -287,7 +287,7 @@ func (s *Service) Validate(
 		}
 		height, commitment := SplitID(id)
 		// TODO(tzdybal): for some reason, if proof doesn't match commitment, API returns (false, "blob:
-		// invalid proof")    but analysis of the code in celestia-node implies this should never happen -
+		// invalid proof")    but analysis of the code in chaincraft implies this should never happen -
 		// maybe it's caused by openrpc?    there is no way of gently handling errors here, but returned
 		// value is fine for us
 		isIncluded, _ := s.blobServ.Included(ctx, height, ns, proofs[i], commitment)

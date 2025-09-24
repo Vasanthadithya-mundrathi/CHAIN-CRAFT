@@ -25,7 +25,7 @@ type Config struct {
 func DefaultConfig() Config {
 	return Config{
 		Address: defaultBindAddress,
-		// do NOT expose the same port as celestia-core by default so that both can run on the same machine
+		// do NOT expose the same port as chaincraft-core by default so that both can run on the same machine
 		Port:     defaultPort,
 		SkipAuth: false,
 		CORS:     DefaultCORSConfig(),

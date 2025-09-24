@@ -1,12 +1,12 @@
 [book]
-authors = ["Celestia Labs"]
+authors = ["Vasanthadithya Mundrathi from CBIT college"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Celestia Node Specification"
+title = "ChainCraft Node Specification"
 
 [output.html]
-git-repository-url = "https://github.com/celestiaorg/celestia-node"
+# Removed GitHub repository URL for local development
 
 [preprocessor.toc]
 command = "mdbook-toc"

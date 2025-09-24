@@ -15,7 +15,7 @@ import (
 	"github.com/celestiaorg/celestia-node/state"
 )
 
-var log = logging.Logger("celestia-client")
+var log = logging.Logger("chaincraft-client")
 
 // Config holds configuration for the Client.
 type Config struct {

@@ -7,11 +7,11 @@ import (
 	"github.com/celestiaorg/celestia-node/nodebuilder"
 )
 
-// Init constructs a CLI command to initialize Celestia Node of any type with the given flags.
+// Init constructs a CLI command to initialize ChainCraft Node of any type with the given flags.
 func Init(fsets ...*flag.FlagSet) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "init",
-		Short: "Initialization for Celestia Node. Passed flags have persisted effect.",
+		Short: "Initialization for ChainCraft Node. Passed flags have persisted effect.",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			err := ParseAllFlags(cmd, NodeType(cmd.Context()), args)

@@ -211,7 +211,7 @@ func ParseMiscFlags(ctx context.Context, cmd *cobra.Command) (context.Context, e
 		}
 		if enablePyroTracing {
 			pyroOpts = append(pyroOpts,
-				otelpyroscope.WithAppName("celestia.da-node"),
+				otelpyroscope.WithAppName("chaincraft.da-node"),
 				otelpyroscope.WithPyroscopeURL(cmd.Flag(pyroscopeEndpoint).Value.String()),
 				otelpyroscope.WithRootSpanOnly(true),
 				otelpyroscope.WithAddSpanName(true),

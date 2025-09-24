@@ -59,7 +59,7 @@ type UserAgent struct {
 
 func (ua *UserAgent) String() string {
 	return fmt.Sprintf(
-		"celestia-node/%s/%s/%s/%s",
+		"chaincraft/%s/%s/%s/%s",
 		ua.network,
 		strings.ToLower(ua.nodeType.String()),
 		ua.build.GetSemanticVersion(),

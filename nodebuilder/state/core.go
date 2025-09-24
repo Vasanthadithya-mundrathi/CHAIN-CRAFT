@@ -16,7 +16,7 @@ import (
 )
 
 // coreAccessor constructs a new instance of state.Module over
-// a celestia-core connection.
+// a chaincraft-core connection.
 func coreAccessor(
 	cfg Config,
 	keyring keyring.Keyring,

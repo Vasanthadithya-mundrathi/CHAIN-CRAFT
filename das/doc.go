@@ -1,5 +1,5 @@
 /*
-Package das contains the most important functionality provided by celestia-node.
+Package das contains the most important functionality provided by chaincraft.
 It contains logic for running data availability sampling (DAS) routines on block
 headers in the network. DAS is the process of verifying the availability of
 block data by sampling shares of those blocks.

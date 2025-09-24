@@ -54,7 +54,7 @@ func WithPyroscope(endpoint string, nodeType node.Type) fx.Option {
 		fx.Invoke(func(peerID peer.ID) error {
 			_, err := pyroscope.Start(pyroscope.Config{
 				UploadRate:      15 * time.Second,
-				ApplicationName: "celestia.da-node",
+				ApplicationName: "chaincraft.da-node",
 				ServerAddress:   endpoint,
 				Tags: map[string]string{
 					"type":   nodeType.String(),

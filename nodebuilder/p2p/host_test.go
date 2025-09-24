@@ -18,7 +18,7 @@ func TestUserAgent(t *testing.T) {
 			name:     "Testnet",
 			net:      "testnet",
 			tp:       node.Full,
-			expected: "celestia-node/testnet/full/v1.0.0/abcdefg",
+			expected: "chaincraft/testnet/full/v1.0.0/abcdefg",
 			build: &node.BuildInfo{
 				SemanticVersion: "v1.0.0",
 				LastCommit:      "abcdefg",
@@ -27,7 +27,7 @@ func TestUserAgent(t *testing.T) {
 		{
 			name:     "Mainnet",
 			net:      "mainnet",
-			expected: "celestia-node/mainnet/light/v1.0.0/abcdefg",
+			expected: "chaincraft/mainnet/light/v1.0.0/abcdefg",
 			tp:       node.Light,
 			build: &node.BuildInfo{
 				SemanticVersion: "v1.0.0",
@@ -37,7 +37,7 @@ func TestUserAgent(t *testing.T) {
 		{
 			name:     "Empty LastCommit, Empty NodeType",
 			net:      "testnet",
-			expected: "celestia-node/testnet/unknown/unknown/unknown",
+			expected: "chaincraft/testnet/unknown/unknown/unknown",
 			build: &node.BuildInfo{
 				SemanticVersion: "",
 				LastCommit:      "",

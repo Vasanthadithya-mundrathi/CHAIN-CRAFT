@@ -29,9 +29,9 @@ import (
 )
 
 const (
-	celestiaAppImage   = "ghcr.io/celestiaorg/celestia-app"
+	celestiaAppImage   = "ghcr.io/cbitcollege/chaincraft-app"
 	defaultCelestiaTag = "v5.0.1"
-	nodeImage          = "ghcr.io/celestiaorg/celestia-node"
+	nodeImage          = "ghcr.io/cbitcollege/chaincraft"
 	testChainID        = "test"
 )
 
@@ -302,7 +302,7 @@ func (f *Framework) createDockerProvider(cfg *Config) tastoratypes.Provider {
 					UIDGID:     "10001:10001",
 				},
 			},
-			Bin:            "celestia-appd",
+			Bin:            "chaincraft-appd",
 			Bech32Prefix:   "celestia",
 			Denom:          "utia",
 			CoinType:       "118",

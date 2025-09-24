@@ -60,7 +60,7 @@ func TestClientReadOnlyMode(t *testing.T) {
 	serverURL := "http://" + server.RPCServer.ListenAddr()
 
 	// Temporary directory for client storage
-	tmpDir, err := os.MkdirTemp("", "celestia-client-test")
+	tmpDir, err := os.MkdirTemp("", "chaincraft-client-test")
 	require.NoError(t, err)
 	defer os.RemoveAll(tmpDir)
 

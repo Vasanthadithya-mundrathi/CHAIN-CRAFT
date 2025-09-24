@@ -18,10 +18,9 @@ var errEmptyShares = errors.New("empty shares")
 var subtreeRootThreshold = appconsts.SubtreeRootThreshold
 
 // The Proof is a set of nmt proofs that can be verified only through
-// the included method (due to limitation of the nmt https://github.com/celestiaorg/nmt/issues/218).
+// the included method (due to limitation of the nmt library).
 // Proof proves the WHOLE namespaced data to the row roots.
 // TODO (@vgonkivs): rework `Proof` in order to prove a particular blob.
-// https://github.com/celestiaorg/celestia-node/issues/2303
 type Proof []*nmt.Proof
 
 func (p Proof) Len() int { return len(p) }

@@ -29,7 +29,7 @@ RUN uname -a && \
 
 FROM docker.io/alpine:3.20.2
 
-# Read here why UID 10001: https://github.com/hexops/dockerfile/blob/main/README.md#do-not-use-a-uid-below-10000
+# UID 10001 is used to avoid conflicts with system users
 ARG UID=10001
 ARG USER_NAME=celestia
 

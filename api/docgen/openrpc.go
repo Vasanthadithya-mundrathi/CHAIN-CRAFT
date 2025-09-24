@@ -21,11 +21,11 @@ import (
 )
 
 const (
-	APIDescription = "The Celestia Node API is the collection of RPC methods that " +
+	APIDescription = "The ChainCraft Node API is the collection of RPC methods that " +
 		"can be used to interact with the services provided by Celestia Data Availability Nodes."
-	APIName  = "Celestia Node API"
-	DocsURL  = "https://github.com/celestiaorg/celestia-node"
-	DocsName = "Celestia Node GitHub"
+	APIName  = "ChainCraft Node API"
+	DocsURL  = "https://docs.celestia.org"
+	DocsName = "ChainCraft Node Documentation"
 )
 
 type Visitor struct {

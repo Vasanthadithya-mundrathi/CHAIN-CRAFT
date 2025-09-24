@@ -62,7 +62,7 @@ func TestSubmitPayForBlob(t *testing.T) {
 			gasLim:   apptypes.DefaultEstimateGas([]uint32{uint32(blobbyTheBlob.DataLen())}),
 			expErr:   nil,
 		},
-		// TODO: add more test cases. The problem right now is that the celestia-app doesn't
+		// TODO: add more test cases. The problem right now is that the chaincraft-app doesn't
 		// correctly construct the node (doesn't pass the min gas price) hence the price on
 		// everything is zero and we can't actually test the correct behavior
 	}

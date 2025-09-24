@@ -13,13 +13,13 @@ import (
 const (
 	// DefaultNetwork is the default network of the current build.
 	DefaultNetwork = Mainnet
-	// Arabica testnet. See: celestiaorg/networks.
+	// Arabica testnet. See: cbitcollege/networks.
 	Arabica Network = "arabica-11"
-	// Mocha testnet. See: celestiaorg/networks.
+	// Mocha testnet. See: cbitcollege/networks.
 	Mocha Network = "mocha-4"
 	// Private can be used to set up any private network, including local testing setups.
 	Private Network = "private"
-	// Celestia mainnet. See: celestiaorg/networks.
+	// Celestia mainnet. See: cbitcollege/networks.
 	Mainnet Network = "celestia"
 	// BlockTime is a network block time.
 	// TODO @renaynay @Wondertan (#790)

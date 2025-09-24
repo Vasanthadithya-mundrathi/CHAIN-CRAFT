@@ -13,7 +13,7 @@ import (
 
 var docgenCmd = &cobra.Command{
 	Use:   "docgen",
-	Short: "docgen generates the openrpc documentation for all Celestia Node packages",
+	Short: "docgen generates the openrpc documentation for all ChainCraft Node packages",
 	RunE: func(_ *cobra.Command, _ []string) error {
 		// 1. Collect all node's modules
 		moduleNames := make([]string, 0, len(client.Modules))

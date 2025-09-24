@@ -7,11 +7,11 @@ import (
 	"github.com/celestiaorg/celestia-node/nodebuilder"
 )
 
-// ResetStore constructs a CLI command to reset the store of Celestia Node.
+// ResetStore constructs a CLI command to reset the store of ChainCraft Node.
 func ResetStore(fsets ...*flag.FlagSet) *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "unsafe-reset-store",
-		Short: "Resets the node's store to a new state. Leaves the keystore and config intact.",
+		Short: "Resets the ChainCraft node's store to a new state. Leaves the keystore and config intact.",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			err := ParseStoreDeterminationFlags(cmd, NodeType(cmd.Context()), args)

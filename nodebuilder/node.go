@@ -115,7 +115,7 @@ func (n *Node) Start(ctx context.Context) error {
 	}
 
 	log.Infof("\n\n/_____/  /_____/  /_____/  /_____/  /_____/ \n\n"+
-		"Started celestia DA node \n"+
+		"Started chaincraft DA node \n"+
 		"node version: 	%s\nnode type: 	%s\nnetwork: 	%s\n\n"+
 		"/_____/  /_____/  /_____/  /_____/  /_____/ \n",
 		node.GetBuildInfo().SemanticVersion,

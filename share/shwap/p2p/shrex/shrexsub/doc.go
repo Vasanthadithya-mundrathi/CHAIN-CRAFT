@@ -7,7 +7,7 @@
 //
 //	"{networkID}/eds-sub/v0.1.0"
 //
-// where networkID is the network ID of the celestia-node that is running the protocol. (e.g. "arabica")
+// where networkID is the network ID of the chaincraft that is running the protocol. (e.g. "arabica")
 //
 // # Usage
 //
@@ -15,7 +15,7 @@
 //
 //	pubsub, err := shrexsub.NewPubSub(ctx, host, networkID)
 //
-// where host is the libp2p host that is running the protocol, and networkID is the network ID of the celestia-node
+// where host is the libp2p host that is running the protocol, and networkID is the network ID of the chaincraft
 // that is running the protocol.
 //
 // After this, you can start the pubsub protocol by:
