@@ -43,3 +43,7 @@ vendor
 coverage.txt
 go.work
 go.work.sum
+
+# Large files that shouldn't be committed
+*.tar.gz
+go*.tar.gz
