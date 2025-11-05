@@ -1,6 +1,6 @@
 # ChainCraft
 
-**Author: Vasanthadithya Mundrathi from CBIT college**
+**Authors: Vasanthadithya Mundrathi , P.Nagesh from CBIT college**
 
 Golang implementation of ChainCraft's blockchain infrastructure node types (`light` | `full` | `bridge`).
 
